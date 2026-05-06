@@ -1,0 +1,38 @@
+## .NET gitignore
+bin/
+obj/
+*.user
+*.suo
+.vs/
+*.swp
+*.sln.docstates
+
+## Secrets — não commitar credenciais
+appsettings.Development.json
+
+## Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+
+## NuGet
+*.nupkg
+*.snupkg
+.nuget/
+packages/
+!packages/build/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## Rider / VS / VSCode
+.idea/
+.vscode/
+*.DotSettings.user
+
+## OS
+.DS_Store
+Thumbs.db
