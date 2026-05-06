@@ -161,15 +161,17 @@ Total tests: 9
  Total time: 1.08 Seconds
 ```
 
-> _Coloque aqui o print do resultado do `dotnet test`._
+![Testes](docs/dotnet_test.png)
 
 ## 8. Print do painel RabbitMQ
 
-> _Coloque aqui o print do painel `http://localhost:15672` mostrando a fila `contratacoes`._
+![RabbitMQ — fila contratacoes](docs/rabbitmq_fila.png)
 
 ## 9. Print da API no Swagger com contratação aprovada
 
-> _Coloque aqui o print do Swagger (`http://localhost:5000/swagger`) com a contratação aprovada._
+![Swagger UI](docs/swagger_print.png)
+
+![Contratação Aprovada — status 2, score 205](docs/contratacao_aprovada.png)
 
 ---
 
