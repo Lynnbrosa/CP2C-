@@ -61,5 +61,17 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Agencia>().ToTable("TB_AGENCIAS");
         modelBuilder.Entity<Produto>().ToTable("TB_PRODUTOS");
         modelBuilder.Entity<Contratacao>().ToTable("TB_CONTRATACOES");
+
+        modelBuilder.Entity<Emprestimo>().HasData(new Emprestimo
+        {
+            Id = 1, Nome = "Emprestimo Pessoal", Descricao = "Emprestimo com analise de score",
+            Ativo = true, TaxaJuros = 0.025m, ValorMinimo = 1000m, ValorMaximo = 50000m,
+            PrazoMaximoMeses = 48, ScoreMinimo = 200
+        });
+        modelBuilder.Entity<MaquinaDeCartao>().HasData(new MaquinaDeCartao
+        {
+            Id = 2, Nome = "Maquina de Cartao Plus", Descricao = "Maquina WiFi com MDR variavel",
+            Ativo = true, Modelo = "Model-X300", TipoConexao = "WiFi", TaxaMdrBase = 0.012m
+        });
     }
 }

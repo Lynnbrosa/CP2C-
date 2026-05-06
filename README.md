@@ -4,9 +4,9 @@
 
 | Nome | RM |
 |------|----|
-| Integrante 1 | RM000000 |
-| Integrante 2 | RM000001 |
-| Integrante 3 | RM000002 |
+| Lynn Bueno Rosa | RM551102 |
+| Gustavo Oliveira de Moura | RM555827 |
+| Giovanne Charelli Zaniboni Silva | RM556223 |
 
 ## 2. Produtos bancários escolhidos e justificativas
 
