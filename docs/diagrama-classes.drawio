@@ -1,0 +1,154 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.9 Chrome/134.0.6998.205 Electron/35.4.0 Safari/537.36" version="27.0.9">
+  <diagram name="Diagrama de Classes" id="banco-digital">
+    <mxGraphModel dx="1843" dy="1102" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="agencia" value="Agencia" style="swimlane;fontStyle=1;align=center;startSize=30;fontSize=13;fillColor=#dae8fc;strokeColor=#6c8ebf;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="40" y="300" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="agencia_attrs" value="- Id: int&#xa;- Nome: string&#xa;- Codigo: string&#xa;- Endereco: string?" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;fontSize=11;" parent="agencia" vertex="1">
+          <mxGeometry y="30" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="agencia_sep" value="" style="line;strokeColor=#6c8ebf;" parent="agencia" vertex="1">
+          <mxGeometry y="110" width="220" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="cliente" value="&lt;&lt;abstract&gt;&gt;&#xa;Cliente" style="swimlane;fontStyle=3;align=center;startSize=40;fontSize=13;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="360" y="270" width="240" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="cliente_attrs" value="- Id: int&#xa;- Nome: string&#xa;- Email: string&#xa;- Telefone: string?&#xa;- AgenciaId: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;fontSize=11;" parent="cliente" vertex="1">
+          <mxGeometry y="40" width="240" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cliente_sep" value="" style="line;strokeColor=#d6b656;" parent="cliente" vertex="1">
+          <mxGeometry y="140" width="240" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="pf" value="PessoaFisica" style="swimlane;fontStyle=1;align=center;startSize=30;fontSize=13;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="200" y="570" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="pf_attrs" value="- Cpf: string&#xa;- DataNascimento: DateTime&#xa;- Renda: decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;fontSize=11;" parent="pf" vertex="1">
+          <mxGeometry y="30" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pf_sep" value="" style="line;strokeColor=#82b366;" parent="pf" vertex="1">
+          <mxGeometry y="100" width="220" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="pj" value="PessoaJuridica" style="swimlane;fontStyle=1;align=center;startSize=30;fontSize=13;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="460" y="570" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="pj_attrs" value="- Cnpj: string&#xa;- RazaoSocial: string&#xa;- RamoAtividade: string?" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;fontSize=11;" parent="pj" vertex="1">
+          <mxGeometry y="30" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="pj_sep" value="" style="line;strokeColor=#82b366;" parent="pj" vertex="1">
+          <mxGeometry y="100" width="220" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="contratacao" value="Contratacao" style="swimlane;fontStyle=1;align=center;startSize=30;fontSize=13;fillColor=#f8cecc;strokeColor=#b85450;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="740" y="260" width="250" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="contratacao_attrs" value="- Id: int&#xa;- ClienteId: int&#xa;- ProdutoId: int&#xa;- Status: StatusContratacao&#xa;- DataSolicitacao: DateTime&#xa;- DataProcessamento: DateTime?&#xa;- ValorSolicitado: decimal?&#xa;- PrazoMeses: int?&#xa;- Score: int?&#xa;- TaxaMdrAplicada: decimal?&#xa;- Observacao: string?" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;fontSize=11;" parent="contratacao" vertex="1">
+          <mxGeometry y="30" width="250" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="contratacao_sep" value="" style="line;strokeColor=#b85450;" parent="contratacao" vertex="1">
+          <mxGeometry y="190" width="250" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="status_enum" value="&lt;&lt;enum&gt;&gt;&#xa;StatusContratacao" style="swimlane;fontStyle=3;align=center;startSize=40;fontSize=12;fillColor=#e1d5e7;strokeColor=#9673a6;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="720" y="560" width="210" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="status_vals" value="Pendente = 0&#xa;EmAnalise = 1&#xa;Aprovada = 2&#xa;Reprovada = 3" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;fontSize=11;" parent="status_enum" vertex="1">
+          <mxGeometry y="40" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="produto" value="&lt;&lt;abstract&gt;&gt;&#xa;Produto" style="swimlane;fontStyle=3;align=center;startSize=40;fontSize=13;fillColor=#fff2cc;strokeColor=#d6b656;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1100" y="270" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="produto_attrs" value="- Id: int&#xa;- Nome: string&#xa;- Descricao: string?&#xa;- Ativo: bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;fontSize=11;" parent="produto" vertex="1">
+          <mxGeometry y="40" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="produto_sep" value="" style="line;strokeColor=#d6b656;" parent="produto" vertex="1">
+          <mxGeometry y="120" width="220" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="emprestimo" value="Emprestimo" style="swimlane;fontStyle=1;align=center;startSize=30;fontSize=13;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="960" y="570" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="emprestimo_attrs" value="- TaxaJuros: decimal&#xa;- ValorMinimo: decimal&#xa;- ValorMaximo: decimal&#xa;- PrazoMaximoMeses: int&#xa;- ScoreMinimo: int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;fontSize=11;" parent="emprestimo" vertex="1">
+          <mxGeometry y="30" width="220" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="emprestimo_sep" value="" style="line;strokeColor=#82b366;" parent="emprestimo" vertex="1">
+          <mxGeometry y="120" width="220" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="maquina" value="MaquinaDeCartao" style="swimlane;fontStyle=1;align=center;startSize=30;fontSize=13;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1420" y="340" width="220" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="maquina_attrs" value="- Modelo: string&#xa;- TipoConexao: string&#xa;- TaxaMdrBase: decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;fontSize=11;" parent="maquina" vertex="1">
+          <mxGeometry y="30" width="220" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="maquina_sep" value="" style="line;strokeColor=#82b366;" parent="maquina" vertex="1">
+          <mxGeometry y="100" width="220" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="receber" value="ReceberSalario" style="swimlane;fontStyle=1;align=center;startSize=30;fontSize=13;fillColor=#d5e8d4;strokeColor=#82b366;fontColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="1440" y="570" width="220" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="receber_attrs" value="- BancoConvenio: string&#xa;- TaxaTransferencia: decimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;overflow=hidden;fontSize=11;" parent="receber" vertex="1">
+          <mxGeometry y="30" width="220" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="receber_sep" value="" style="line;strokeColor=#82b366;" parent="receber" vertex="1">
+          <mxGeometry y="90" width="220" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_ag_cli" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;startArrow=ERmandOne;startFill=0;" parent="1" source="agencia" target="cliente" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_ag_cli_1" value="1" style="resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=12;" parent="rel_ag_cli" connectable="0" vertex="1">
+          <mxGeometry x="-0.85" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_ag_cli_n" value="N" style="resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=12;" parent="rel_ag_cli" connectable="0" vertex="1">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_cli_ct" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;startArrow=ERmandOne;startFill=0;" parent="1" source="cliente" target="contratacao" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_cli_ct_1" value="1" style="resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=12;" parent="rel_cli_ct" connectable="0" vertex="1">
+          <mxGeometry x="-0.85" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_cli_ct_n" value="N" style="resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=12;" parent="rel_cli_ct" connectable="0" vertex="1">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="rel_prod_ct" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;startArrow=ERmandOne;startFill=0;" parent="1" source="produto" target="contratacao" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_prod_ct_1" value="1" style="resizable=0;html=1;align=right;verticalAlign=bottom;fontSize=12;" parent="rel_prod_ct" connectable="0" vertex="1">
+          <mxGeometry x="0.85" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lbl_prod_ct_n" value="N" style="resizable=0;html=1;align=left;verticalAlign=bottom;fontSize=12;" parent="rel_prod_ct" connectable="0" vertex="1">
+          <mxGeometry x="-0.85" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="her_pf" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=12;" parent="1" source="pf" target="cliente" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="her_pj" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=12;" parent="1" source="pj" target="cliente" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="her_emp" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=12;" parent="1" source="emprestimo" target="produto" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="her_maq" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=12;" parent="1" source="maquina" target="produto" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="her_rec" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;endFill=0;endSize=12;" parent="1" source="receber" target="produto" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_status" style="edgeStyle=orthogonalEdgeStyle;endArrow=open;endFill=0;dashed=1;" parent="1" source="contratacao" target="status_enum" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
