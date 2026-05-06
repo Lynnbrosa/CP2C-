@@ -18,7 +18,9 @@
 
 ## 4. Diagrama de Classes
 
-> Coloque aqui a imagem após gerar no draw.io (arquivo: `/docs/diagrama-classes.drawio`)
+![Diagrama de Classes](docs/diagrama-classes.png)
+
+> Arquivo fonte editável: [`docs/diagrama-classes.drawio`](docs/diagrama-classes.drawio)
 
 ```
 Cliente (abstract, TPH discriminator=TipoCliente)
